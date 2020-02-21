@@ -29,7 +29,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralMa
           super.viewDidLoad()
           
         centralManager = CBCentralManager(delegate: self, queue: DispatchQueue(label: "this", qos: .utility, attributes: .concurrent, autoreleaseFrequency: .inherit, target: .global()))
-          peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+		peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
 
       }
 
@@ -57,11 +57,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralMa
     @IBAction func stopPressed(_ sender: UIButton) {
         if isActive == true {
             isActive = false
+			centralManager.stopScan()
             DispatchQueue.main.async {
                 self.toggleStateOutlet.setTitle("Start", for: .normal)
             }
         } else {
             isActive = true
+			centralManager.scanForPeripherals(withServices: nil, options: .none)
             DispatchQueue.main.async {
                 self.toggleStateOutlet.setTitle("Stop", for: .normal)
             }
@@ -98,8 +100,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralMa
             
         }
     }
-	
-	
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         

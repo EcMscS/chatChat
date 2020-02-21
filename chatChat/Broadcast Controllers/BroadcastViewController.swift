@@ -54,6 +54,7 @@ class BroadcastViewController: UIViewController, CBPeripheralManagerDelegate {
 		peripheralManager = nil
         beaconPeripheralData = nil
         localBeacon = nil
+		print("Stopped Broadcast")
     }
 
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
@@ -62,7 +63,7 @@ class BroadcastViewController: UIViewController, CBPeripheralManagerDelegate {
 			print(beaconPeripheralData as Any)
         } else if peripheral.state == .poweredOff {
             peripheralManager.stopAdvertising()
-			print("Stopped Broadcast")
+			print("Stopped Broadcast State OFF")
         }
     }
 	
