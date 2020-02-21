@@ -13,6 +13,7 @@
 		1F7E1C6822FE183600D1FC57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7E1C6622FE183600D1FC57 /* Main.storyboard */; };
 		1F7E1C6A22FE183700D1FC57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7E1C6922FE183700D1FC57 /* Assets.xcassets */; };
 		1F7E1C6D22FE183700D1FC57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7E1C6B22FE183700D1FC57 /* LaunchScreen.storyboard */; };
+		1FEF1CCC240030020067850A /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF1CCB240030020067850A /* BroadcastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1F7E1C6922FE183700D1FC57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F7E1C6C22FE183700D1FC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7E1C6E22FE183700D1FC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FEF1CCB240030020067850A /* BroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,30 @@
 			children = (
 				1F7E1C6022FE183600D1FC57 /* AppDelegate.swift */,
 				1F7E1C6222FE183600D1FC57 /* SceneDelegate.swift */,
-				1F7E1C6422FE183600D1FC57 /* ViewController.swift */,
 				1F7E1C6622FE183600D1FC57 /* Main.storyboard */,
+				1FEF1CCA24002FEC0067850A /* Broadcast Controllers */,
+				1FEF1CC924002FCF0067850A /* Read Controllers */,
 				1F7E1C6922FE183700D1FC57 /* Assets.xcassets */,
 				1F7E1C6B22FE183700D1FC57 /* LaunchScreen.storyboard */,
 				1F7E1C6E22FE183700D1FC57 /* Info.plist */,
 			);
 			path = chatChat;
+			sourceTree = "<group>";
+		};
+		1FEF1CC924002FCF0067850A /* Read Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F7E1C6422FE183600D1FC57 /* ViewController.swift */,
+			);
+			path = "Read Controllers";
+			sourceTree = "<group>";
+		};
+		1FEF1CCA24002FEC0067850A /* Broadcast Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FEF1CCB240030020067850A /* BroadcastViewController.swift */,
+			);
+			path = "Broadcast Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +159,7 @@
 			files = (
 				1F7E1C6522FE183600D1FC57 /* ViewController.swift in Sources */,
 				1F7E1C6122FE183600D1FC57 /* AppDelegate.swift in Sources */,
+				1FEF1CCC240030020067850A /* BroadcastViewController.swift in Sources */,
 				1F7E1C6322FE183600D1FC57 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arin.chatChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arin.chatChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
