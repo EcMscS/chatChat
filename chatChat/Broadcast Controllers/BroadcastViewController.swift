@@ -23,7 +23,7 @@ class BroadcastViewController: UIViewController, CBPeripheralManagerDelegate {
     }
 	
 	@IBAction func startBroadcastTapped(_ sender: UIButton) {
-		createBeaconRegion()
+		createBeaconRegionAndStart()
 	}
 	
 	@IBAction func stopBroadcastTapped(_ sender: UIButton) {
@@ -31,7 +31,7 @@ class BroadcastViewController: UIViewController, CBPeripheralManagerDelegate {
 	}
 	
     
-	func createBeaconRegion() {
+	func createBeaconRegionAndStart() {
 		if localBeacon != nil {
             stopLocalBeacon()
         }

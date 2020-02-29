@@ -87,6 +87,72 @@
             </objects>
             <point key="canvasLocation" x="1032" y="40"/>
         </scene>
+        <!--Listen-->
+        <scene sceneID="bth-FB-Qbr">
+            <objects>
+                <viewController id="Wcg-lb-7Zg" customClass="ListenViewController" customModule="chatChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="78B-ZL-oxV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cXH-6h-wiJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yni-09-IOP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-IG-ApZ">
+                                        <rect key="frame" x="0.0" y="669" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jfL-FH-GMe"/>
+                                        </constraints>
+                                        <state key="normal" title="Start Listening">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startListeningTapped:" destination="Wcg-lb-7Zg" eventType="touchUpInside" id="FOK-WY-nbt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-og-Lgr">
+                                        <rect key="frame" x="0.0" y="719" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.77820994070000005" green="0.21854643160000001" blue="0.13082461570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wcq-io-mK7"/>
+                                        </constraints>
+                                        <state key="normal" title="Stop Listening">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopListeningTapped:" destination="Wcg-lb-7Zg" eventType="touchUpInside" id="dDp-vI-e0x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TS6-D6-eQC" firstAttribute="bottom" secondItem="cXH-6h-wiJ" secondAttribute="bottom" id="4cW-ks-WZ3"/>
+                            <constraint firstItem="TS6-D6-eQC" firstAttribute="trailing" secondItem="cXH-6h-wiJ" secondAttribute="trailing" id="6gn-vk-EK8"/>
+                            <constraint firstItem="cXH-6h-wiJ" firstAttribute="top" secondItem="TS6-D6-eQC" secondAttribute="top" id="Eqp-u7-CJ6"/>
+                            <constraint firstItem="cXH-6h-wiJ" firstAttribute="leading" secondItem="TS6-D6-eQC" secondAttribute="leading" id="FOE-kh-HVT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TS6-D6-eQC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Listen" image="ear" catalog="system" id="dtq-Cl-By7"/>
+                    <connections>
+                        <outlet property="listernerDataView" destination="yni-09-IOP" id="Py1-6E-bBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgJ-8S-HyW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="860"/>
+        </scene>
         <!--Broadcast-->
         <scene sceneID="cwX-nX-iqG">
             <objects>
@@ -158,12 +224,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UeX-kQ-CCC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BwS-FP-n0C">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="syo-gf-7Yq"/>
                         <segue destination="4Gn-YV-H9b" kind="relationship" relationship="viewControllers" id="MyP-Da-YZB"/>
+                        <segue destination="Wcg-lb-7Zg" kind="relationship" relationship="viewControllers" id="QJC-rf-Qa1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiM-GR-wzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -173,6 +241,7 @@
     </scenes>
     <resources>
         <image name="badge.plus.radiowaves.right" catalog="system" width="64" height="50"/>
+        <image name="ear" catalog="system" width="52" height="64"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
 </document>
