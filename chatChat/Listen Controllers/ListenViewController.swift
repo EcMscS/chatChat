@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-// reference: https://www.raywenderlich.com/632-ibeacon-tutorial-with-ios-and-swift
 
 class ListenViewController: UIViewController, CLLocationManagerDelegate {
 
